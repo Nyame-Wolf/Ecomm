@@ -254,3 +254,74 @@ export function IconFilters(props) {
     </Icon>
   );
 }
+
+export function IconAccountDetails(props) {
+  return (
+    <Icon {...props}>
+      <title>AccountDetails</title>
+      <path
+        d="M6.98005 8C8.97768 8 10.5971 6.3806 10.5971 4.38298C10.5971 2.38535 8.97768 0.765957 6.98005 0.765957C4.98243 0.765957 3.36303 2.38535 3.36303 4.38298C3.36303 6.3806 4.98243 8 6.98005 8Z"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.194 15.234C13.194 12.4345 10.4089 10.1702 6.98 10.1702C3.55106 10.1702 0.765957 12.4345 0.765957 15.234"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+
+export function IconAccountAddress(props) {
+  return (
+    <Icon {...props}>
+      <title>AccountAddress</title>
+      <path
+        d="M5.82979 15.234H10.1702C13.7872 15.234 15.234 13.7872 15.234 10.1702V5.82979C15.234 2.21277 13.7872 0.765957 10.1702 0.765957H5.82979C2.21277 0.765957 0.765957 2.21277 0.765957 5.82979V10.1702C0.765957 13.7872 2.21277 15.234 5.82979 15.234Z"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.7134 5.82979H5.2879"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.7134 10.1702H5.2879"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+
+export function IconOrderHistory(props) {
+  return (
+    <Icon {...props}>
+      <title>Order History</title>
+      <path
+        d="M7.13258 1.9975L2.22383 5.92875C1.67133 6.36792 1.31716 7.29583 1.43758 7.99L2.37966 13.6283C2.54966 14.6342 3.51299 15.4487 4.53299 15.4487H12.4663C13.4792 15.4487 14.4497 14.6271 14.6197 13.6283L15.5617 7.99C15.6751 7.29583 15.3209 6.36792 14.7755 5.92875L9.86674 2.00458C9.10883 1.39542 7.88341 1.39542 7.13258 1.9975Z"
+        stroke="#7C7B7B"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.50195 6.55713H14.9877"
+        stroke="#7C7B7B"
+        strokeLinecap="round"
+      />
+    </Icon>
+  );
+}

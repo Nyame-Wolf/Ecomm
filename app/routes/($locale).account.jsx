@@ -5,6 +5,7 @@ import {
   useLoaderData,
   useMatches,
   useOutlet,
+  Link,
 } from '@remix-run/react';
 import {Suspense} from 'react';
 import {
@@ -16,6 +17,9 @@ import {
   AccountAddressBook,
   Modal,
   ProductSwimlane,
+  IconAccountAddress,
+  IconAccountDetails,
+  IconOrderHistory,
 } from '~/components';
 import {FeaturedCollections} from '~/components/FeaturedCollections';
 import {json, defer, redirect} from '@shopify/remix-oxygen';
@@ -104,37 +108,56 @@ export default function Authenticated() {
   return <Account {...data} />;
 }
 
-function Account({customer, orders, heading, addresses, featuredData}) {
+function Account({heading}) {
   return (
     <>
-      <PageHeader heading={heading}>
+      <div className="flex items-center space-x-4">
+        <PageHeader heading={heading} />
         <Form method="post" action={usePrefixPathWithLocale('/account/logout')}>
-          <button type="submit" className="text-primary/50">
+          <button
+            type="submit"
+            className="text-primary/50 border border-gray-300 p-2 whitespace-nowrap mr-4"
+          >
             Sign out
           </button>
         </Form>
-      </PageHeader>
-      {orders && <AccountOrderHistory orders={orders} />}
-      <AccountDetails customer={customer} />
-      <AccountAddressBook addresses={addresses} customer={customer} />
-      {!orders.length && (
-        <Suspense>
-          <Await
-            resolve={featuredData}
-            errorElement="There was a problem loading featured products."
-          >
-            {(data) => (
-              <>
-                <FeaturedCollections
-                  title="Popular Collections"
-                  collections={data.featuredCollections}
-                />
-                <ProductSwimlane products={data.featuredProducts} />
-              </>
-            )}
-          </Await>
-        </Suspense>
-      )}
+      </div>
+      <div className="flex">
+        <div className="w-1/6 h-screen p-4">
+          <ul className="flex flex-col space-y-4">
+            <li className="my-4">
+              <Link
+                to="details"
+                className="border border-gray_800 border-solid flex flex-row gap-[10px] items-center justify-between p-2 rounded-[5px]"
+              >
+                <p className="text-xl font-bold">Account Details</p>
+                <IconAccountDetails />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="addresses"
+                className="border border-gray_800 border-solid flex flex-row gap-[27px] items-center justify-between p-2 rounded-[5px] w-full"
+              >
+                <p className="text-xl font-bold">Addresses</p>
+                <IconAccountAddress />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="orders"
+                className="border border-gray_800 border-solid flex flex-row gap-[27px] items-center justify-between p-2 rounded-[5px] w-full"
+              >
+                <p className="text-xl font-bold">Order History</p>
+                <IconOrderHistory />
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="w-5/6 h-screen p-4 overflow-auto">
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 }
