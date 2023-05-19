@@ -69,7 +69,7 @@ export async function loader({request, context, params}) {
   );
 }
 
-export function Authenticated() {
+export default function Authenticated() {
   const data = useLoaderData();
   const outlet = useOutlet();
   const matches = useMatches();
@@ -101,7 +101,7 @@ export function Authenticated() {
   return <Account {...data} />;
 }
 
-export default function Account({heading, featuredData}) {
+export function Account({heading, featuredData}) {
   return (
     <>
       <div className="flex items-center space-x-4">
