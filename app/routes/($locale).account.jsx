@@ -9,12 +9,7 @@ import {
 } from '@remix-run/react';
 import {Suspense} from 'react';
 import {
-  Button,
-  OrderCard,
   PageHeader,
-  Text,
-  AccountDetails,
-  AccountAddressBook,
   Modal,
   ProductSwimlane,
   IconAccountAddress,
@@ -106,7 +101,7 @@ export function Authenticated() {
   return <Account {...data} />;
 }
 
-export default function Account({heading}) {
+export default function Account({heading, featuredData}) {
   return (
     <>
       <div className="flex items-center space-x-4">
@@ -134,7 +129,7 @@ export default function Account({heading}) {
             </li>
             <li>
               <Link
-                to="addresses"
+                to="address"
                 className="border border-gray_800 border-solid flex flex-row gap-[27px] items-center justify-between p-2 rounded-[5px] w-full"
               >
                 <p className="text-xl font-bold">Addresses</p>
@@ -154,7 +149,7 @@ export default function Account({heading}) {
         </div>
         <div className="w-5/6 h-screen p-4 overflow-auto">
           <Outlet />
-          <Suspense>
+          {/* <Suspense>
             <Await
               resolve={featuredData}
               errorElement="There was a problem loading featured products."
@@ -169,7 +164,7 @@ export default function Account({heading}) {
                 </>
               )}
             </Await>
-          </Suspense>
+          </Suspense> */}
         </div>
       </div>
     </>

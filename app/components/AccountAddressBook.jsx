@@ -69,7 +69,7 @@ function Address({address, defaultAddress}) {
         >
           Edit
         </Link>
-        <Form action="address/delete" method="delete">
+        <Form action="delete" method="delete">
           <input type="hidden" name="addressId" value={address.id} />
           <button className="text-left text-primary/50 ml-6 text-sm">
             Remove
