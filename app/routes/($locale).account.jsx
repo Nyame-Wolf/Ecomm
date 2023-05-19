@@ -100,8 +100,6 @@ export function Authenticated() {
           <Account {...data} />
         </>
       );
-    } else {
-      return <Outlet context={{customer: data.customer}} />;
     }
   }
 

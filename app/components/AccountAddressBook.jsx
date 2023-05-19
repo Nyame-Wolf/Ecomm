@@ -14,7 +14,7 @@ export function AccountAddressBook({customer, addresses}) {
           )}
           <div className="w-48">
             <Button
-              to="address/add"
+              to="add"
               className="mt-2 text-sm w-full mb-6"
               variant="secondary"
             >
