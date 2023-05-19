@@ -154,6 +154,22 @@ export default function Account({heading}) {
         </div>
         <div className="w-5/6 h-screen p-4 overflow-auto">
           <Outlet />
+          <Suspense>
+            <Await
+              resolve={featuredData}
+              errorElement="There was a problem loading featured products."
+            >
+              {(data) => (
+                <>
+                  <FeaturedCollections
+                    title="Popular Collections"
+                    collections={data.featuredCollections}
+                  />
+                  <ProductSwimlane products={data.featuredProducts} />
+                </>
+              )}
+            </Await>
+          </Suspense>
         </div>
       </div>
     </>
